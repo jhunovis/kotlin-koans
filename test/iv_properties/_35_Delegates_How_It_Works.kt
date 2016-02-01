@@ -1,8 +1,8 @@
 package iv_properties
 
+import iii_conventions.MyDate
 import org.junit.Assert.assertEquals
 import org.junit.Test
-import iii_conventions.MyDate
 
 class _35_Delegates_How_It_Works {
     @Test fun testDate() {
@@ -11,5 +11,10 @@ class _35_Delegates_How_It_Works {
         assertEquals(2014, d.date.year)
         assertEquals(1, d.date.month)
         assertEquals(13, d.date.dayOfMonth)
+    }
+
+    @Test(expected = NullPointerException::class)
+    fun testGetter_GivenPropertyNotInitialized_ShouldThrowException() {
+        D().date
     }
 }

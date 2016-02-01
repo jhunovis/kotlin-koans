@@ -1,9 +1,10 @@
 package iv_properties
 
-import util.*
+import util.TODO
+import util.doc34
 
 class LazyPropertyUsingDelegates(val initializer: () -> Int) {
-    val lazyValue: Int by todoTask34()
+    val lazyValue: Int by lazy(initializer)
 }
 
 fun todoTask34(): Lazy<Int> = TODO(
