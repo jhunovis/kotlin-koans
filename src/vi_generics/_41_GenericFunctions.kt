@@ -1,8 +1,7 @@
 package vi_generics
 
-import java.util.ArrayList
-import java.util.HashSet
 import util.TODO
+import java.util.*
 
 fun task41(): Nothing = TODO(
     """
@@ -21,11 +20,18 @@ fun task41(): Nothing = TODO(
 )
 
 fun List<String>.partitionWordsAndLines(): Pair<List<String>, List<String>> {
-    task41()
-//    return partitionTo(ArrayList<String>(), ArrayList()) { s -> !s.contains(" ") }
+    return partitionTo(ArrayList<String>(), ArrayList()) { s -> !s.contains(" ") }
 }
 
+
 fun Set<Char>.partitionLettersAndOtherSymbols(): Pair<Set<Char>, Set<Char>> {
-    task41()
-//    return partitionTo(HashSet<Char>(), HashSet()) { c -> c in 'a'..'z' || c in 'A'..'Z'}
+    return partitionTo(HashSet<Char>(), HashSet()) { c -> c in 'a'..'z' || c in 'A'..'Z'}
 }
+
+fun <E, T : MutableCollection<E>> Collection<E>.partitionTo(first : T, second : T, predicate: (E) -> Boolean): Pair<T, T> {
+    for (e in this) {
+        if (predicate(e)) first.add(e) else second.add(e)
+    }
+    return Pair(first, second)
+}
+
