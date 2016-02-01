@@ -1,9 +1,10 @@
 package i_introduction._0_Hello_World.Hello
 
-import util.*
+import util.TODO
+import util.doc0
 
 fun todoTask0(): Nothing = TODO(
-    """
+        """
         Introduction:
 
         Workshop tasks are usually to change the function 'taskN' by replacing its body
@@ -18,12 +19,12 @@ fun todoTask0(): Nothing = TODO(
 
         To start please make the function 'task0' return "OK".
     """,
-    documentation = doc0(),
-    references = { task0(); "OK" }
+        documentation = doc0(),
+        references = { task0(); "OK" }
 )
 
 fun task0(): String {
-    return todoTask0()
+    return "OK"
 }
 
 
